@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automotive Repair Specialists Inc – Hudson, NH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #C8251A;
+    --red-dark: #8f1a12;
+    --charcoal: #1a1a1a;
+    --off-white: #f5f3ee;
+    --light-gray: #e8e5de;
+    --mid-gray: #9a9489;
+    --text-muted: #6b6560;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--charcoal);
+    color: var(--off-white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 70px;
+    background: rgba(26,26,26,0.97);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    backdrop-filter: blur(6px);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.08em;
+    color: var(--white);
+  }
+
+  .nav-logo span { color: var(--red); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--mid-gray);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--red);
+    color: var(--white) !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 3px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--red-dark) !important; color: var(--white) !important; }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 2.5rem 5rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1632823471565-1ecdf5c6da12?w=1600&q=80') center center / cover no-repeat;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.97) 0%, rgba(10,10,10,0.6) 55%, rgba(10,10,10,0.2) 100%);
+  }
+
+  .hero-content { position: relative; z-index: 2; max-width: 700px; }
+
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    font-family: 'DM Serif Display', serif;
+    color: var(--off-white);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: rgba(245,243,238,0.72);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--red);
+    color: var(--white);
+    padding: 0.85rem 2rem;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+  .btn-ghost {
+    color: var(--off-white);
+    padding: 0.85rem 2rem;
+    border-radius: 3px;
+    border: 1px solid rgba(245,243,238,0.3);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: border-color 0.2s, background 0.2s;
+    display: inline-block;
+  }
+
+  .btn-ghost:hover { border-color: var(--off-white); background: rgba(255,255,255,0.07); }
+
+  .hero-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 2.5rem;
+    color: rgba(245,243,238,0.55);
+    font-size: 0.85rem;
+  }
+
+  .stars { color: #f5a623; font-size: 1rem; letter-spacing: 2px; }
+
+  /* TICKER BAR */
+  .ticker-bar {
+    background: var(--red);
+    padding: 0.75rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .ticker-inner {
+    display: inline-flex;
+    gap: 3rem;
+    animation: ticker 28s linear infinite;
+  }
+
+  .ticker-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.9);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .ticker-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.5); }
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* SECTION BASE */
+  section { padding: 6rem 2.5rem; }
+
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 540px;
+  }
+
+  /* ABOUT */
+  #about {
+    background: #111;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-images {
+    position: relative;
+    height: 480px;
+  }
+
+  .about-img-main {
+    position: absolute;
+    top: 0; left: 0;
+    width: 78%;
+    height: 88%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .about-img-accent {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 52%;
+    height: 55%;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 4px solid #111;
+  }
+
+  .about-badge {
+    position: absolute;
+    top: 50%; left: 58%;
+    transform: translate(-50%, -50%);
+    background: var(--red);
+    color: var(--white);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .about-badge-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    line-height: 1;
+    display: block;
+  }
+
+  .about-badge-text {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  .about-text { max-width: 480px; }
+
+  .about-text p {
+    color: rgba(245,243,238,0.7);
+    line-height: 1.8;
+    font-size: 0.97rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .stat-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 1.25rem;
+    border-radius: 4px;
+  }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    color: var(--red);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--mid-gray);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 0.35rem;
+  }
+
+  /* SERVICES */
+  #services { background: var(--charcoal); }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .service-card {
+    background: var(--charcoal);
+    padding: 2.5rem 2rem;
+    transition: background 0.25s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--red);
+    transition: width 0.3s ease;
+  }
+
+  .service-card:hover { background: #212121; }
+  .service-card:hover::after { width: 100%; }
+
+  .service-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .service-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.45rem;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    margin-bottom: 0.6rem;
+  }
+
+  .service-desc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* GALLERY */
+  #gallery { background: #0e0e0e; padding: 6rem 0; }
+
+  .gallery-header { padding: 0 2.5rem; margin-bottom: 2.5rem; }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 260px 260px;
+    gap: 3px;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gallery-item:first-child {
+    grid-row: 1 / 3;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .gallery-item:hover img { transform: scale(1.04); }
+
+  .gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.2);
+    transition: opacity 0.3s;
+  }
+
+  .gallery-item:hover::after { opacity: 0; }
+
+  /* REVIEWS */
+  #reviews { background: var(--charcoal); }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .review-card {
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 1.75rem;
+    border-radius: 4px;
+    transition: border-color 0.2s;
+  }
+
+  .review-card:hover { border-color: rgba(200,37,26,0.4); }
+
+  .review-stars { color: #f5a623; font-size: 0.95rem; letter-spacing: 2px; margin-bottom: 0.9rem; }
+
+  .review-text {
+    font-style: italic;
+    color: rgba(245,243,238,0.75);
+    line-height: 1.7;
+    font-size: 0.93rem;
+    margin-bottom: 1.25rem;
+    font-family: 'DM Serif Display', serif;
+  }
+
+  .reviewer-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+  }
+
+  .review-rating-summary {
+    background: var(--red);
+    padding: 2.5rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .rating-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--white);
+  }
+
+  .rating-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    margin-top: 0.5rem;
+  }
+
+  .rating-stars { color: #ffd060; font-size: 1.1rem; margin-top: 0.5rem; letter-spacing: 3px; }
+
+  /* MAP SECTION */
+  #location { background: #111; }
+
+  .location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+
+  .location-info-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+  }
+
+  .location-icon {
+    font-size: 1.4rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .location-info-item h4 {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+
+  .location-info-item p {
+    color: rgba(245,243,238,0.72);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .location-info-item a {
+    color: var(--off-white);
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .location-info-item a:hover { color: var(--red); }
+
+  .map-embed {
+    border-radius: 4px;
+    overflow: hidden;
+    height: 380px;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .map-embed iframe { width: 100%; height: 100%; border: none; }
+
+  .hours-table { width: 100%; margin-top: 0.5rem; }
+  .hours-table tr td { padding: 0.3rem 0; font-size: 0.9rem; color: rgba(245,243,238,0.65); }
+  .hours-table tr td:first-child { color: rgba(245,243,238,0.4); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; width: 110px; }
+
+  /* APPOINTMENT */
+  #contact {
+    background: var(--charcoal);
+    position: relative;
+  }
+
+  #contact::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--red);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 5rem;
+    margin-top: 3rem;
+    align-items: start;
+  }
+
+  .contact-aside h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    line-height: 1.05;
+  }
+
+  .contact-aside p {
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-direct {
+    background: rgba(200,37,26,0.1);
+    border: 1px solid rgba(200,37,26,0.25);
+    padding: 1.25rem 1.5rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+  }
+
+  .contact-direct p { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 0.5rem; }
+
+  .contact-direct a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .contact-direct a:hover { color: var(--red); }
+
+  .contact-email-link {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.88rem;
+    color: var(--mid-gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-email-link:hover { color: var(--off-white); }
+
+  /* FORM */
+  .appt-form { display: flex; flex-direction: column; gap: 1rem; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .field-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .field-group label {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    font-weight: 500;
+  }
+
+  .field-group input,
+  .field-group select,
+  .field-group textarea {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 3px;
+    padding: 0.75rem 1rem;
+    color: var(--off-white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.93rem;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .field-group select option { background: #2a2a2a; }
+
+  .field-group input:focus,
+  .field-group select:focus,
+  .field-group textarea:focus {
+    border-color: rgba(200,37,26,0.6);
+    background: rgba(255,255,255,0.06);
+  }
+
+  .field-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    padding: 0.9rem 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.2s, transform 0.15s;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  .form-submit:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+  .form-success {
+    display: none;
+    background: rgba(16, 120, 60, 0.15);
+    border: 1px solid rgba(16, 120, 60, 0.35);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    color: #7de8a8;
+    font-size: 0.92rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #0a0a0a;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.7rem;
+    letter-spacing: 0.1em;
+    color: var(--white);
+  }
+
+  .footer-logo span { color: var(--red); }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--off-white); }
+
+  .footer-copy {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.2);
+    text-align: center;
+  }
+
+  /* MOBILE HAMBURGER */
+  .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .hamburger span { width: 24px; height: 2px; background: var(--off-white); border-radius: 2px; transition: all 0.3s; }
+
+  /* MOBILE NAV OVERLAY */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(10,10,10,0.97);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .mobile-nav.open { display: flex; }
+
+  .mobile-nav a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--off-white);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.2s;
+  }
+
+  .mobile-nav a:hover { color: var(--red); }
+
+  .mobile-nav-close {
+    position: absolute;
+    top: 1.5rem; right: 2rem;
+    font-size: 1.8rem;
+    color: var(--mid-gray);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+  }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    section { padding: 4rem 1.5rem; }
+    #about { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-images { height: 300px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery-item:first-child { grid-row: auto; }
+    .location-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero { padding: 0 1.5rem 3.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()">✕</button>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#services" onclick="closeMobileNav()">Services</a>
+  <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
+  <a href="#reviews" onclick="closeMobileNav()">Reviews</a>
+  <a href="#location" onclick="closeMobileNav()">Location</a>
+  <a href="#contact" onclick="closeMobileNav()">Book Now</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">ARS <span>●</span> Automotive</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="openMobileNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Hudson, NH · Since 1986</p>
+    <h1>Built on<br><em>Honest</em><br>Repairs</h1>
+    <p class="hero-desc">Automotive Repair Specialists Inc has kept Hudson & Nashua drivers moving for nearly 40 years — with quality work, fair pricing, and a team that actually explains what your car needs.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Book an Appointment</a>
+      <a href="tel:6038809494" class="btn-ghost">Call (603) 880-9494</a>
+    </div>
+    <div class="hero-rating">
+      <span class="stars">★★★★★</span>
+      <span>4.8 stars · 50 Google Reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-inner">
+    <span class="ticker-item"><span class="ticker-dot"></span>Oil Changes</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Brake Service</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Engine Repair</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Transmission Service</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Exhaust &amp; Mufflers</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Shocks &amp; Struts</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Scheduled Maintenance</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>NH State Inspection</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Oil Changes</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Brake Service</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Engine Repair</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Transmission Service</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Exhaust &amp; Mufflers</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Shocks &amp; Struts</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Scheduled Maintenance</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>NH State Inspection</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-images reveal">
+    <img class="about-img-main" src="https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=800&q=80" alt="Mechanic working under a vehicle in the shop" loading="lazy">
+    <img class="about-img-accent" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Engine repair close up" loading="lazy">
+    <div class="about-badge">
+      <span class="about-badge-num">38+</span>
+      <span class="about-badge-text">Years in Business</span>
+    </div>
+  </div>
+  <div class="about-text reveal">
+    <p class="section-label">Who We Are</p>
+    <h2 class="section-title">Trusted Since 1986</h2>
+    <p>Greg and the ARS team have been servicing vehicles in the Hudson area since 1986. We built our reputation the old-fashioned way — by being straight with every customer, doing the job right the first time, and charging prices that are actually fair.</p>
+    <p>We work on all makes and models. Whether it's a quick oil change or a full engine overhaul, you'll always know exactly what's going on with your vehicle before any work begins.</p>
+    <div class="about-stats">
+      <div class="stat-box">
+        <div class="stat-num">4.8★</div>
+        <div class="stat-label">Google Rating</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Google Reviews</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">All</div>
+        <div class="stat-label">Makes &amp; Models</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">Fast</div>
+        <div class="stat-label">Turnaround Times</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header reveal">
+    <div>
+      <p class="section-label">What We Do</p>
+      <h2 class="section-title">Full-Service Auto Repair</h2>
+    </div>
+    <a href="#contact" class="btn-primary">Schedule Service</a>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <span class="service-icon">🛢️</span>
+      <div class="service-name">Oil Changes</div>
+      <p class="service-desc">Quick, thorough oil and filter changes. Customers report turnaround in as little as 14 minutes. All grades and synthetic options available.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🛑</span>
+      <div class="service-name">Brake Service</div>
+      <p class="service-desc">Full brake inspections, pad and rotor replacement, brake fluid flushes. We won't recommend anything you don't actually need.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔧</span>
+      <div class="service-name">Engine Repair</div>
+      <p class="service-desc">Diagnostics, tune-ups, timing, head gaskets and full engine rebuilds. We tackle jobs big and small.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">⚙️</span>
+      <div class="service-name">Transmission</div>
+      <p class="service-desc">Fluid drain and fill, filter service, and transmission repairs. Phenomenal work and fair pricing — as our reviews consistently show.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">💨</span>
+      <div class="service-name">Exhaust &amp; Mufflers</div>
+      <p class="service-desc">Full exhaust system inspection, muffler replacement, catalytic converter service, and pipe repair.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📋</span>
+      <div class="service-name">NH State Inspection</div>
+      <p class="service-desc">Licensed for NH safety and emissions inspections. Get your sticker from a shop you can trust — no upselling.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔩</span>
+      <div class="service-name">Shocks &amp; Suspension</div>
+      <p class="service-desc">Shocks, struts, springs, and steering components. We keep your ride smooth and handling sharp.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🗓️</span>
+      <div class="service-name">Scheduled Maintenance</div>
+      <p class="service-desc">Follow your manufacturer's maintenance schedule with confidence. Coolant, transmission fluid, timing belt, filters, and more.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-header reveal">
+    <p class="section-label">The Shop</p>
+    <h2 class="section-title">A Place That Does The Work Right</h2>
+  </div>
+  <div class="gallery-grid reveal">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80" alt="Auto shop interior with vehicles being serviced" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=600&q=80" alt="Mechanic inspecting brake components" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=600&q=80" alt="Engine compartment close-up during repair" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80" alt="Vehicle on lift for undercarriage inspection" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1574023278049-f90deb8a7d85?w=600&q=80" alt="Mechanic using diagnostic tools" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="reveal">
+    <p class="section-label">What Customers Say</p>
+    <h2 class="section-title">Real Reviews, Real Results</h2>
+  </div>
+  <div class="reviews-grid reveal">
+    <div class="review-rating-summary">
+      <div class="rating-big">4.8</div>
+      <div class="rating-stars">★★★★★</div>
+      <div class="rating-label">50 Google Reviews</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I have always had great experiences with ARS. Quality work at fair prices. Greg and his crew are the real deal."</p>
+      <div class="reviewer-name">— Google Reviewer</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Greg and Kenny did a PHENOMENAL job on my oil change and transmission fluid service. Quick turnaround and very fair pricing. I will be back!"</p>
+      <div class="reviewer-name">— Google Reviewer</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Did my oil change in 14 minutes. Super nice guy, good pricing. Couldn't ask for more."</p>
+      <div class="reviewer-name">— Google Reviewer</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Greg is absolutely honest and straightforward. He told me there was nothing wrong with my car when I was ready to buy a new one out of fear. Saved me thousands."</p>
+      <div class="reviewer-name">— Car Talk Review</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Even though I moved to Milford, I still drive back to Hudson to have Greg service my cars. That says everything."</p>
+      <div class="reviewer-name">— Long-time Customer</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="reveal">
+    <p class="section-label">Find Us</p>
+    <h2 class="section-title">Come See Us in Hudson, NH</h2>
+  </div>
+  <div class="location-grid">
+    <div class="reveal">
+      <div class="location-info-item">
+        <span class="location-icon">📍</span>
+        <div>
+          <h4>Address</h4>
+          <p>185 Lowell Rd<br>Hudson, NH 03051</p>
+        </div>
+      </div>
+      <div class="location-info-item">
+        <span class="location-icon">📞</span>
+        <div>
+          <h4>Phone</h4>
+          <a href="tel:6038809494">(603) 880-9494</a>
+        </div>
+      </div>
+      <div class="location-info-item">
+        <span class="location-icon">✉️</span>
+        <div>
+          <h4>Email</h4>
+          <a href="mailto:ARSautomotive@comcast.net" style="color:var(--off-white); text-decoration:none; font-size:0.95rem;">ARSautomotive@comcast.net</a>
+        </div>
+      </div>
+      <div class="location-info-item">
+        <span class="location-icon">🕐</span>
+        <div>
+          <h4>Hours</h4>
+          <table class="hours-table">
+            <tr><td>Mon – Fri</td><td>7:30 AM – 5:30 PM</td></tr>
+            <tr><td>Saturday</td><td>Closed</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="map-embed reveal">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2945.8!2d-71.427!3d42.74067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3b05ed5a3bf61%3A0x1be0b93a886b16ae!2sAutomotive%20Repair%20Specialists%20Inc!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="ARS location map">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / APPOINTMENT -->
+<section id="contact">
+  <div class="reveal">
+    <p class="section-label">Schedule Service</p>
+    <h2 class="section-title">Book an Appointment</h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-aside reveal">
+      <h3>Ready to get your car taken care of?</h3>
+      <p>Fill out the form and we'll confirm your appointment by phone or email. Prefer to talk directly? Give us a call — we're happy to help.</p>
+      <p style="font-size:0.85rem; color:var(--text-muted);">We service all makes and models. Walk-ins welcome for oil changes, but appointments are recommended for other services.</p>
+      <div class="contact-direct">
+        <p>Call Us Directly</p>
+        <a href="tel:6038809494">(603) 880-9494</a>
+        <a class="contact-email-link" href="mailto:ARSautomotive@comcast.net">ARSautomotive@comcast.net</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <form class="appt-form" id="apptForm" onsubmit="submitForm(event)">
+        <div class="form-row">
+          <div class="field-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" required placeholder="John">
+          </div>
+          <div class="field-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" required placeholder="Smith">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required placeholder="(603) 555-0100">
+          </div>
+          <div class="field-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john@email.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field-group">
+            <label for="year">Vehicle Year</label>
+            <input type="text" id="year" placeholder="2018">
+          </div>
+          <div class="field-group">
+            <label for="vehicle">Make &amp; Model</label>
+            <input type="text" id="vehicle" placeholder="Honda Accord">
+          </div>
+        </div>
+        <div class="field-group">
+          <label for="service">Service Needed</label>
+          <select id="service" required>
+            <option value="" disabled selected>Select a service…</option>
+            <option>Oil Change</option>
+            <option>Brake Service</option>
+            <option>Engine Repair / Diagnostics</option>
+            <option>Transmission Service</option>
+            <option>Exhaust / Muffler</option>
+            <option>NH State Inspection</option>
+            <option>Shocks &amp; Suspension</option>
+            <option>Scheduled Maintenance</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="field-group">
+            <label for="pref-date">Preferred Date</label>
+            <input type="date" id="pref-date">
+          </div>
+          <div class="field-group">
+            <label for="pref-time">Preferred Time</label>
+            <select id="pref-time">
+              <option value="" disabled selected>Select time…</option>
+              <option>7:30 AM</option>
+              <option>8:00 AM</option>
+              <option>9:00 AM</option>
+              <option>10:00 AM</option>
+              <option>11:00 AM</option>
+              <option>12:00 PM</option>
+              <option>1:00 PM</option>
+              <option>2:00 PM</option>
+              <option>3:00 PM</option>
+              <option>4:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-group">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" placeholder="Describe your issue, symptoms, or any other details…"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Request Appointment →</button>
+        <div class="form-success" id="formSuccess">
+          ✓ Thank you! We've received your request and will be in touch within 1 business day to confirm your appointment.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ARS <span>●</span> Automotive Repair Specialists</div>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#contact">Book Now</a></li>
+    <li><a href="tel:6038809494">(603) 880-9494</a></li>
+  </ul>
+  <p class="footer-copy">185 Lowell Rd, Hudson, NH 03051 · Open Mon–Fri 7:30AM–5:30PM<br>© 2025 Automotive Repair Specialists Inc. All rights reserved.</p>
+</footer>
+
+<script>
+  function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); }
+  function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  function submitForm(e) {
+    e.preventDefault();
+    const btn = document.querySelector('.form-submit');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    setTimeout(() => {
+      document.getElementById('apptForm').querySelectorAll('input, select, textarea').forEach(el => el.value = '');
+      document.getElementById('formSuccess').style.display = 'block';
+      btn.textContent = 'Request Appointment →';
+      btn.disabled = false;
+    }, 1200);
+  }
+</script>
+</body>
+</html>
